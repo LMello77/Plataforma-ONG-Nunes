@@ -5,53 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Plataforma de ONGs - Página Inicial. Conheça nossa missão, visão e valores.">
     <title>ONG Impacto Social - Página Inicial</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
 
-    <header>
-        <h1>ONG Impacto Social</h1>
-        <p>Transformando vidas através da solidariedade.</p>
-        
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos e Voluntariado</a></li>
-                <li><a href="cadastro.html">Cadastre-se</a></li>
-            </ul>
-        </nav>
+    <header class="header-principal">
+        <div class="container grid-12">
+            <a href="index.html" class="logo">
+                <h1>ONG Impacto Social</h1>
+            </a>
+            
+            <nav class="menu-principal" aria-label="Navegação Principal">
+                <button class="menu-hamburguer" aria-expanded="false" aria-controls="menu-lista">Menu</button>
+                <ul id="menu-lista" class="menu-lista">
+                    <li><a href="index.html" class="ativo">Início</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="cadastro.html">Cadastre-se</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
+        <section class="hero-section">
+            <div class="container grid-12">
+                <h2>Transformando vidas através da solidariedade.</h2>
+                <p>Nossa missão é combater a desigualdade social oferecendo oportunidades e apoio a comunidades carentes.</p>
+                <a href="projetos.html" class="btn btn-primario">Conheça Nossos Projetos</a>
+            </div>
+        </section>
         
-        <section aria-labelledby="sobre-nos">
-            <h2 id="sobre-nos">Sobre Nós</h2>
-            <p>Nossa missão é combater a desigualdade social oferecendo oportunidades e apoio a comunidades carentes.</p>
-            
-            <img src="https://via.placeholder.com/800x300.png?text=Nossa+Equipe+em+Ação" 
-                 alt="Foto ilustrativa da equipe da ONG trabalhando em um projeto comunitário."
-                 width="800" height="300">
-                 
-            <h3>Nossa História</h3>
-            <p>Fundada em 2010, a Impacto Social já ajudou mais de 5.000 pessoas...</p>
+        <section class="container" aria-labelledby="sobre-nos">
+            <div class="grid-12 conteudo-secao">
+                <h2 id="sobre-nos">Sobre Nós</h2>
+                <p>Fundada em 2010, a Impacto Social já ajudou mais de 5.000 pessoas. Nossa visão é um mundo onde todos tenham acesso a educação, saúde e dignidade.</p>
+                
+                <img src="https://via.placeholder.com/800x300.png?text=Nossa+Equipe+em+Ação" 
+                     alt="Foto ilustrativa da equipe da ONG trabalhando em um projeto comunitário."
+                     class="imagem-destaque">
+            </div>
         </section>
 
-        <section aria-labelledby="galeria">
-            <h2 id="galeria">Galeria de Atividades</h2>
-            <img src="https://via.placeholder.com/400x300.png?text=Atividade+1" alt="Atividade 1" width="400" height="300">
-            <img src="https://via.placeholder.com/400x300.png?text=Atividade+2" alt="Atividade 2" width="400" height="300">
+        <section class="container" aria-labelledby="galeria">
+             <div class="grid-12 conteudo-secao">
+                <h2 id="galeria">Galeria de Atividades</h2>
+                <div class="galeria-grid">
+                    <img src="https://via.placeholder.com/400x300.png?text=Atividade+1" alt="Atividade 1">
+                    <img src="https://via.placeholder.com/400x300.png?text=Atividade+2" alt="Atividade 2">
+                    <img src="https://via.placeholder.com/400x300.png?text=Atividade+3" alt="Atividade 3">
+                </div>
+            </div>
         </section>
-
     </main>
 
-    <footer>
-        <h2>Informações de Contato</h2>
-        <address>
-            Rua da Solidariedade, 123 - Centro<br>
-            Telefone: (11) 5555-4444<br>
-            E-mail: <a href="mailto:contato@impactosocial.org">contato@impactosocial.org</a>
-        </address>
-        <p>© 2025 ONG Impacto Social. Todos os direitos reservados.</p>
+    <footer class="footer-principal">
+        <div class="container grid-12">
+            <div class="footer-info">
+                <h3>Informações de Contato</h3>
+                <address>
+                    Rua da Solidariedade, 123 - Centro<br>
+                    Telefone: (11) 5555-4444<br>
+                    E-mail: <a href="mailto:contato@impactosocial.org">contato@impactosocial.org</a>
+                </address>
+            </div>
+            <div class="footer-copy">
+                <p>© 2025 ONG Impacto Social. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
+</footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

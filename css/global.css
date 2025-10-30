@@ -1,0 +1,103 @@
+/*
+ * ARQUIVO: global.css
+ * DESCRIÇÃO: Define o Sistema de Design (Requisito 1).
+ * Contém o Reset, Variáveis CSS (Cores, Tipografia, Espaçamento)
+ * e estilos globais do corpo (body).
+ */
+
+/* --- 1. Sistema de Design: Variáveis CSS (:root) --- */
+:root {
+    /* Paleta de Cores (8+ cores) */
+    --cor-primaria: #007BFF;       /* Azul vibrante (links, botões primários) */
+    --cor-primaria-escura: #0056b3; /* Para :hover de botões */
+    --cor-secundaria: #28a745;     /* Verde (sucesso, botões secundários) */
+    --cor-secundaria-escura: #1e7e34;
+    --cor-erro: #dc3545;           /* Vermelho (validação, alertas de erro) */
+    
+    --cor-neutra-900: #212529;      /* Preto (Texto principal, títulos) */
+    --cor-neutra-700: #495057;      /* Cinza escuro (Texto secundário, parágrafos) */
+    --cor-neutra-300: #DEE2E6;      /* Cinza claro (Bordas, divisórias) */
+    --cor-neutra-100: #F8F9FA;      /* Cinza bem claro (Fundo de seções) */
+    --cor-neutra-000: #FFFFFF;      /* Branco (Fundo principal, texto sobre fundo escuro) */
+    
+    /* Tipografia Hierárquica (5+ tamanhos) */
+    --fonte-principal: "Helvetica Neue", Arial, sans-serif;
+    --tam-h1: 2.5rem;   /* 40px */
+    --tam-h2: 2rem;     /* 32px */
+    --tam-h3: 1.5rem;   /* 24px */
+    --tam-p: 1rem;      /* 16px */
+    --tam-pequeno: 0.875rem; /* 14px */
+    
+    /* Sistema de Espaçamento Modular (Base 8px) */
+    --esp-1: 0.5rem;  /* 8px */
+    --esp-2: 1rem;    /* 16px */
+    --esp-3: 1.5rem;  /* 24px */
+    --esp-4: 2rem;    /* 32px */
+    --esp-5: 3rem;    /* 48px */
+    --esp-6: 4rem;    /* 64px */
+}
+
+/* --- 2. Reset Básico e Estilos Globais --- */
+
+/* Define o box-sizing para facilitar layouts */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Define o scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos base do corpo */
+body {
+    font-family: var(--fonte-principal);
+    font-size: var(--tam-p);
+    line-height: 1.6;
+    color: var(--cor-neutra-700);
+    background-color: var(--cor-neutra-000);
+}
+
+/* Estilos globais de Imagem (Responsividade básica) */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove espaço extra abaixo das imagens */
+}
+
+/* Estilos globais de Links */
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-primaria-escura);
+    text-decoration: underline;
+}
+
+/* --- 3. Tipografia Hierárquica (Aplicação) --- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--cor-neutra-900);
+    margin-bottom: var(--esp-2);
+    line-height: 1.2;
+}
+
+h1 { font-size: var(--tam-h1); }
+h2 { font-size: var(--tam-h2); }
+h3 { font-size: var(--tam-h3); }
+
+p {
+    margin-bottom: var(--esp-2);
+}
+
+ul, ol {
+    list-style: none;
+}

@@ -1,0 +1,264 @@
+/*
+ * ARQUIVO: layout.css
+ * DESCRIÇÃO: Define os leiautes, o grid de 12 colunas e a responsividade (Requisito 2).
+ * Inclui o menu principal e a navegação mobile (Requisito 3).
+ */
+
+/* --- 1. Estrutura de Layout (Grid Principal) --- */
+
+/* O .container limita a largura do conteúdo e centraliza */
+.container {
+    max-width: 540px; /* Largura inicial para mobile */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--esp-2); /* 16px */
+    padding-right: var(--esp-2); /* 16px */
+}
+
+/* O .grid-12 é o nosso sistema de grid customizado (12 colunas) */
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--esp-3); /* 24px */
+}
+
+/* Mobile-first: Por padrão, todos os 'grid-' ocupam 12 colunas (largura total).
+  As colunas reais só serão aplicadas em breakpoints maiores (ver @media).
+*/
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, 
+.grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12 {
+    grid-column: span 12;
+}
+
+
+/* --- 2. Componentes de Layout Específicos --- */
+
+/* Seções de conteúdo principal */
+.conteudo-secao {
+    padding-top: var(--esp-5);    /* 48px */
+    padding-bottom: var(--esp-5); /* 48px */
+}
+
+/* Seção Hero (Index) */
+.hero-section {
+    background-color: var(--cor-neutra-100);
+    padding: var(--esp-6) 0; /* 64px */
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: var(--tam-h1);
+    color: var(--cor-primaria);
+}
+
+.hero-section p {
+    font-size: var(--tam-h3);
+    color: var(--cor-neutra-700);
+    margin-bottom: var(--esp-4);
+}
+
+/* Cabeçalho */
+.header-principal {
+    background-color: var(--cor-neutra-000);
+    border-bottom: 1px solid var(--cor-neutra-300);
+    padding-top: var(--esp-2);
+    padding-bottom: var(--esp-2);
+}
+
+.header-principal .grid-12 {
+    /* Flexbox para alinhamento interno (Requisito 2) */
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 0; /* Sobrescreve o gap do grid */
+}
+
+.logo h1 {
+    font-size: var(--tam-h3);
+    margin: 0;
+    color: var(--cor-primaria);
+}
+.logo h1:hover {
+    color: var(--cor-primaria-escura);
+}
+
+/* Rodapé */
+.footer-principal {
+    background-color: var(--cor-neutra-900);
+    color: var(--cor-neutra-100);
+    padding: var(--esp-5) 0;
+    margin-top: var(--esp-5);
+}
+.footer-principal .grid-12 {
+    align-items: center;
+}
+.footer-info {
+    grid-column: span 12;
+    margin-bottom: var(--esp-3);
+}
+.footer-copy {
+    grid-column: span 12;
+    text-align: center;
+}
+.footer-principal h3 {
+    color: var(--cor-neutra-000);
+}
+.footer-principal a {
+    color: var(--cor-neutra-000);
+    font-weight: bold;
+}
+.footer-principal a:hover {
+    color: var(--cor-primaria);
+}
+
+
+/* --- 3. Navegação Sofisticada (Requisito 3) --- */
+
+/* 3.1. Menu Mobile (Mobile-First) */
+.menu-hamburguer {
+    display: block; /* Visível no mobile */
+    background: none;
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    font-weight: bold;
+    padding: var(--esp-1) var(--esp-2);
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000; /* Fica acima de outros elementos */
+}
+.menu-hamburguer:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-neutra-000);
+}
+
+.menu-lista {
+    display: none; /* Escondido no mobile por padrão */
+    position: absolute;
+    top: 85px; /* Altura do header */
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-neutra-000);
+    border-bottom: 1px solid var(--cor-neutra-300);
+    padding: var(--esp-3);
+    z-index: 900;
+    text-align: center;
+}
+
+/* Classe 'ativo' que será adicionada pelo JavaScript */
+.menu-lista.ativo {
+    display: block;
+}
+
+.menu-lista li {
+    margin-bottom: var(--esp-3);
+}
+.menu-lista a {
+    font-size: var(--tam-h3);
+    font-weight: bold;
+    padding: var(--esp-2);
+}
+
+/* --- 4. Breakpoints Responsivos (Requisito 2 - 5 Breakpoints) --- */
+
+/* Breakpoint 1: small (sm) - 576px */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+/* Breakpoint 2: medium (md) - 768px */
+/* ESTE É O BREAKPOINT PRINCIPAL: Muda para o menu desktop e ativa o grid */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    /* 3.2. Menu Desktop */
+    .menu-hamburguer {
+        display: none; /* Esconde o hambúrguer */
+    }
+
+    .menu-lista {
+        display: flex; /* Mostra o menu desktop */
+        position: static;
+        width: auto;
+        border: none;
+        padding: 0;
+        gap: var(--esp-3); /* Espaço entre os itens do menu */
+    }
+    .menu-lista li {
+        margin: 0;
+    }
+    .menu-lista a {
+        font-size: var(--tam-p); /* Tamanho normal no desktop */
+        font-weight: bold;
+        padding: var(--esp-1);
+    }
+    .menu-lista a.ativo,
+    .menu-lista a:hover {
+        background-color: var(--cor-primaria);
+        color: var(--cor-neutra-000);
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    /* Ativando as Colunas do Grid */
+    .grid-1 { grid-column: span 1; }
+    .grid-2 { grid-column: span 2; }
+    .grid-3 { grid-column: span 3; }
+    .grid-4 { grid-column: span 4; }
+    .grid-5 { grid-column: span 5; }
+    .grid-6 { grid-column: span 6; }
+    .grid-7 { grid-column: span 7; }
+    .grid-8 { grid-column: span 8; }
+    .grid-9 { grid-column: span 9; }
+    .grid-10 { grid-column: span 10; }
+    .grid-11 { grid-column: span 11; }
+    .grid-12 { grid-column: span 12; }
+    
+    /* Ajustes de layout para tablet+ */
+    .form-cadastro {
+        /* Centraliza o formulário (grid-8) no meio do grid-12 */
+        grid-column: 3 / span 8; 
+    }
+    .footer-info {
+        grid-column: span 7;
+        margin-bottom: 0;
+    }
+    .footer-copy {
+        grid-column: span 5;
+        text-align: right;
+    }
+}
+
+/* Breakpoint 3: large (lg) - 992px */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    /* Layout do formulário maior */
+    .form-cadastro {
+        grid-column: 2 / span 10;
+    }
+}
+
+/* Breakpoint 4: extra-large (xl) - 1200px */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    /* Layout do formulário no tamanho padrão */
+    .form-cadastro {
+        grid-column: 3 / span 8;
+    }
+}
+
+/* Breakpoint 5: extra-extra-large (xxl) - 1400px */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}

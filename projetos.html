@@ -5,63 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Conheça nossos projetos sociais, saiba como ser voluntário e como doar.">
     <title>Projetos e Voluntariado - ONG Impacto Social</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
 
-    <header>
-        <h1>ONG Impacto Social</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos e Voluntariado</a></li>
-                <li><a href="cadastro.html">Cadastre-se</a></li>
-            </ul>
-        </nav>
+    <header class="header-principal">
+        <div class="container grid-12">
+            <a href="index.html" class="logo">
+                <h1>ONG Impacto Social</h1>
+            </a>
+            
+            <nav class="menu-principal" aria-label="Navegação Principal">
+                <button class="menu-hamburguer" aria-expanded="false" aria-controls="menu-lista">Menu</button>
+                <ul id="menu-lista" class="menu-lista">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="projetos.html" class="ativo">Projetos</a></li>
+                    <li><a href="cadastro.html">Cadastre-se</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section aria-labelledby="nossos-projetos">
-            <h1 id="nossos-projetos">Nossos Projetos Sociais</h1>
+        <section class="container" aria-labelledby="nossos-projetos">
+            <div class="grid-12 conteudo-secao">
+                <h1 id="nossos-projetos">Nossos Projetos Sociais</h1>
+                <p>Conheça as frentes em que atuamos e veja como seu apoio se transforma em ação.</p>
+            </div>
+
+            <div class="grid-12 cards-container">
+                
+                <article class="card">
+                    <img src="https://via.placeholder.com/600x300.png?text=Projeto+Educação" 
+                         alt="Crianças em uma sala de aula participando do projeto Educação para Todos."
+                         class="card-imagem">
+                    <div class="card-conteudo">
+                        <span class="badge">Educação</span>
+                        <h2 class="card-titulo">Projeto Educação para Todos</h2>
+                        <p>Levamos reforço escolar e atividades culturais para crianças em áreas de vulnerabilidade.</p>
+                        <a href="#" class="btn btn-secundario">Saiba Mais</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://via.placeholder.com/600x300.png?text=Sopa+Solidária" 
+                         alt="Voluntários distribuindo sopa."
+                         class="card-imagem">
+                    <div class="card-conteudo">
+                        <span class="badge">Combate à Fome</span>
+                        <h2 class="card-titulo">Projeto Sopa Solidária</h2>
+                        <p>Distribuição de alimentos e cobertores para a população em situação de rua.</p>
+                        <a href="#" class="btn btn-secundario">Saiba Mais</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://via.placeholder.com/600x300.png?text=Saúde+Comunitária" 
+                         alt="Profissional da saúde atendendo comunidade."
+                         class="card-imagem">
+                    <div class="card-conteudo">
+                        <span class="badge">Saúde</span>
+                        <h2 class="card-titulo">Saúde Comunitária</h2>
+                        <p>Atendimentos médicos e odontológicos básicos em comunidades sem acesso.</p>
+                        <a href="#" class="btn btn-secundario">Saiba Mais</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="container cta-section" aria-labelledby="participe">
+            <div class="grid-6 cta-bloco">
+                <h2 id="participe">Seja um Voluntário</h2>
+                <p>Seu tempo e talento podem fazer a diferença. Precisamos de ajuda em diversas áreas.</p>
+                <a href="cadastro.html" class="btn btn-primario">Quero ser Voluntário</a>
+            </div>
             
-            <article>
-                <h2>Projeto Educação para Todos</h2>
-                <p>Levamos reforço escolar e atividades culturais para crianças em áreas de vulnerabilidade.</p>
-                <img src="https://via.placeholder.com/600x300.png?text=Projeto+Educação" 
-                     alt="Crianças em uma sala de aula participando do projeto Educação para Todos."
-                     width="600" height="300">
-            </article>
-
-            <article>
-                <h2>Projeto Sopa Solidária</h2>
-                <p>Distribuição de alimentos e cobertores para a população em situação de rua.</p>
-            </article>
+            <div class="grid-6 cta-bloco">
+                <h2>Como Doar</h2>
+                <p>Sua contribuição financeira é vital para mantermos nossos projetos ativos. Doe com segurança.</p>
+                <a href="#" class="btn btn-secundario">Quero Doar Agora</a>
+            </div>
         </section>
-
-        <section aria-labelledby="voluntariado">
-            <h2 id="voluntariado">Seja um Voluntário</h2>
-            <p>Seu tempo e talento podem fazer a diferença. Precisamos de ajuda nas seguintes áreas:</p>
-            <ul>
-                <li>Logística (separação de doações)</li>
-                <li>Educadores (reforço escolar)</li>
-                <li>Comunicação (redes sociais)</li>
-            </ul>
-            <p>Interessado? <a href="cadastro.html">Cadastre-se agora</a> para avaliarmos seu perfil.</p>
-        </section>
-
-        <section aria-labelledby="como-doar">
-            <h2 id="como-doar">Como Doar</h2>
-            <p>Sua contribuição financeira é vital para mantermos nossos projetos ativos.</p>
-            <img src="https://via.placeholder.com/400x200.png?text=QR+Code+PIX" 
-                 alt="QR Code para doação via PIX. Chave: pix@impactosocial.org"
-                 width="400" height="200">
-            <p><strong>Chave PIX:</strong> pix@impactosocial.org</p>
-        </section>
-
     </main>
 
-    <footer>
-        <p>© 2025 ONG Impacto Social. Todos os direitos reservados.</p>
+    <footer class="footer-principal">
+        <div class="container grid-12">
+            <div class="footer-info">
+                <h3>Informações de Contato</h3>
+                <address>
+                    Rua da Solidariedade, 123 - Centro<br>
+                    Telefone: (11) 5555-4444<br>
+                    E-mail: <a href="mailto:contato@impactosocial.org">contato@impactosocial.org</a>
+                </address>
+            </div>
+            <div class="footer-copy">
+                <p>© 2025 ONG Impacto Social. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
+</footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
