@@ -17,7 +17,6 @@
             <a href="index.html" class="logo">
                 <h1>ONG Impacto Social</h1>
             </a>
-            
             <nav class="menu-principal" aria-label="Navegação Principal">
                 <button class="menu-hamburguer" aria-expanded="false" aria-controls="menu-lista">Menu</button>
                 <ul id="menu-lista" class="menu-lista">
@@ -36,7 +35,7 @@
                 <p>Preencha seus dados para se tornar um voluntário ou apoiador.</p>
             </div>
 
-            <form action="#" method="post" class="grid-8 form-cadastro">
+            <form action="#" method="post" class="grid-8 form-cadastro" novalidate>
                 
                 <fieldset class="form-grupo">
                     <legend>Dados Pessoais</legend>
@@ -44,16 +43,19 @@
                     <div class="form-campo">
                         <label for="nome">Nome Completo:</label>
                         <input type="text" id="nome" name="nome_completo" required minlength="3">
+                        <span class="aviso-erro"></span>
                     </div>
                     
                     <div class="form-campo">
                         <label for="email">E-mail:</label>
                         <input type="email" id="email" name="email" required placeholder="seuemail@dominio.com">
+                        <span class="aviso-erro"></span>
                     </div>
 
                     <div class="form-campo">
                         <label for="nascimento">Data de Nascimento:</label>
                         <input type="date" id="nascimento" name="data_nascimento" required>
+                        <span class="aviso-erro"></span>
                     </div>
 
                     <div class="form-campo">
@@ -62,6 +64,7 @@
                                pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
                                placeholder="123.456.789-00" 
                                title="Digite o CPF no formato 123.456.789-00">
+                        <span class="aviso-erro"></span>
                     </div>
 
                     <div class="form-campo">
@@ -70,12 +73,12 @@
                                pattern="\(\d{2}\) \d{4,5}-\d{4}" 
                                placeholder="(11) 98765-4321"
                                title="Digite o Telefone no formato (11) 98765-4321">
+                        <span class="aviso-erro"></span>
                     </div>
                 </fieldset>
 
                 <fieldset class="form-grupo">
                     <legend>Endereço</legend>
-
                     <div class="form-campo">
                         <label for="cep">CEP:</label>
                         <input type="text" id="cep" name="cep" required 
@@ -83,68 +86,26 @@
                                placeholder="12345-678"
                                title="Digite o CEP no formato 12345-678">
                     </div>
-
-                    <div class="form-campo">
-                        <label for="endereco">Endereço (Rua, N°):</label>
-                        <input type="text" id="endereco" name="endereco" required>
-                    </div>
-
-                    <div class="form-campo">
-                        <label for="cidade">Cidade:</label>
-                        <input type="text" id="cidade" name="cidade" required>
-                    </div>
-
-                    <div class="form-campo">
-                        <label for="estado">Estado:</label>
-                        <input type="text" id="estado" name="estado" required maxlength="2" placeholder="Ex: SP">
-                    </div>
-                </fieldset>
+                    </fieldset>
                 
                 <fieldset class="form-grupo">
-                    <legend>Interesses</legend>
-                    <div class="form-campo">
-                        <p>Quero me cadastrar como:</p>
-                        <label><input type="radio" name="tipo_cadastro" value="voluntario"> Voluntário</label>
-                        <label><input type="radio" name="tipo_cadastro" value="doador"> Doador</label>
-                    </div>
-                </fieldset>
+                    </fieldset>
 
                 <div class="form-botoes">
-                    <button type="button" class="btn btn-secundario" disabled>Limpar</button>
                     <button type="submit" class="btn btn-primario">Enviar Cadastro</button>
                 </div>
                 
             </form>
         </section>
 
-        <div class="container grid-8">
-            <div class="alert alert-sucesso" role="alert">
-                <strong>Sucesso!</strong> Seu cadastro foi enviado (exemplo de alerta).
-            </div>
-            <div class="alert alert-erro" role="alert">
-                <strong>Erro:</strong> O CPF parece inválido (exemplo de alerta).
-            </div>
-        </div>
-
     </main>
 
     <footer class="footer-principal">
-        <div class="container grid-12">
-            <div class="footer-info">
-                <h3>Informações de Contato</h3>
-                <address>
-                    Rua da Solidariedade, 123 - Centro<br>
-                    Telefone: (11) 5555-4444<br>
-                    E-mail: <a href="mailto:contato@impactosocial.org">contato@impactosocial.org</a>
-                </address>
-            </div>
-            <div class="footer-copy">
-                <p>© 2025 ONG Impacto Social. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-</footer>
+        </footer>
 
     <script src="js/main.js"></script>
+    
+    <script src="js/validation.js"></script>
+
 </body>
 </html>

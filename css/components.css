@@ -213,4 +213,33 @@
     color: #842029;
     background-color: #f8d7da;
     border-color: #f5c2c7;
+}/*
+ * =========================================
+ * ESTILOS DA ENTREGA III (Validação)
+ * =========================================
+ */
+
+/* --- 6. Avisos de Formulário --- */
+
+/* O 'span' para a mensagem de erro. Começa escondido. */
+.aviso-erro {
+    display: none; /* Escondido por padrão */
+    color: var(--cor-erro);
+    font-size: var(--tam-pequeno);
+    font-weight: bold;
+    margin-top: var(--esp-1);
+}
+
+/* * Quando o campo (input) é inválido E o usuário já tentou interagir com ele (touched/dirty),
+ * o JavaScript vai adicionar a classe 'invalido' ao .form-campo (o 'pai').
+ * Isso vai fazer o aviso-erro aparecer.
+ */
+.form-campo.invalido .aviso-erro {
+    display: block; /* Mostra o aviso */
+}
+
+/* Adiciona a borda vermelha no input que está dentro de um .form-campo inválido */
+.form-campo.invalido input {
+    border-color: var(--cor-erro);
+    background-color: #fff8f8;
 }
