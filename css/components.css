@@ -242,4 +242,25 @@
 .form-campo.invalido input {
     border-color: var(--cor-erro);
     background-color: #fff8f8;
+
+}
+/*
+ * =========================================
+ * ESTILOS DA ENTREGA IV (Modo Escuro)
+ * =========================================
+ */
+.theme-toggle {
+    background: var(--cor-neutra-100);
+    border: 2px solid var(--cor-neutra-300);
+    color: var(--cor-neutra-900);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+    background: var(--cor-neutra-300);
+    border-color: var(--cor-primaria);
 }
