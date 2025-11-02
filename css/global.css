@@ -100,4 +100,40 @@ p {
 
 ul, ol {
     list-style: none;
+
+}
+/*
+ * =========================================
+ * LÓGICA MODO ESCURO (ENTREGA IV)
+ * =========================================
+ */
+:root[data-theme="dark"] {
+    /* Inverte as cores primárias e neutras */
+    --cor-primaria: #00AFFF; /* Um azul mais claro para contraste */
+    --cor-primaria-escura: #007BFF;
+    
+    --cor-neutra-900: #F8F9FA;      /* Texto principal (quase branco) */
+    --cor-neutra-700: #DEE2E6;      /* Texto secundário (cinza claro) */
+    --cor-neutra-300: #495057;      /* Bordas (cinza escuro) */
+    --cor-neutra-100: #212529;      /* Fundo de seções (quase preto) */
+    --cor-neutra-000: #121212;      /* Fundo principal (preto) */
+    
+    /* Ajustes em componentes para o modo escuro */
+    .header-principal {
+        border-bottom-color: var(--cor-neutra-300);
+    }
+    .card {
+        border-color: var(--cor-neutra-300);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Inverte a cor do botão de tema */
+    .theme-toggle {
+        background: var(--cor-neutra-100);
+        border-color: var(--cor-neutra-300);
+        color: var(--cor-neutra-900);
+    }
+    .theme-toggle:hover {
+        background: var(--cor-neutra-300);
+    }
 }
