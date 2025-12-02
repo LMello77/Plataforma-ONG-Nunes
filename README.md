@@ -54,3 +54,23 @@ Para uma versão de produção real, os próximos passos (fora do escopo acadêm
 * **Otimização de Build:** Utilização de ferramentas (Vite, Webpack) para minificação de arquivos CSS/JS/HTML.
 * **Otimização de Imagens:** Compressão de imagens e uso de formatos modernos (WebP).
 * **Backend:** Conexão com um backend e banco de dados reais para o formulário de cadastro.
+
+
+---
+
+## 🗄️ Módulo de Banco de Dados
+
+Esta seção contém os scripts SQL desenvolvidos para a disciplina de Modelagem de Banco de Dados, integrando o Back-End ao projeto da ONG.
+
+### Estrutura dos Arquivos (`/database`)
+* **`01_criacao_tabelas.sql`**: Script DDL responsável por criar o banco de dados `ong_impacto_social` e suas 6 tabelas normalizadas (3FN), definindo Chaves Primárias e Estrangeiras.
+* **`02_insercao_dados.sql`**: Script DML contendo comandos `INSERT` para povoar o banco com dados fictícios de teste (Categorias, Usuários, Projetos, Campanhas, etc.).
+* **`03_consultas_manipulacao.sql`**: Script DML/DQL contendo:
+    * Consultas complexas com `JOIN`, `GROUP BY` e `ORDER BY`.
+    * Comandos de atualização de dados (`UPDATE`).
+    * Comandos de exclusão segura (`DELETE`).
+
+### Como Executar
+1. Importe o arquivo `01_criacao_tabelas.sql` no seu SGBD (MySQL Workbench, phpMyAdmin, etc) para criar a estrutura.
+2. Execute o arquivo `02_insercao_dados.sql` para carregar os dados iniciais.
+3. Utilize os comandos do arquivo `03_consultas_manipulacao.sql` para testar as operações do sistema.
